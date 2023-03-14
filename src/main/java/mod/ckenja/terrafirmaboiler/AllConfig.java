@@ -2,7 +2,7 @@ package mod.ckenja.terrafirmaboiler;
 
 import net.minecraftforge.common.ForgeConfigSpec;
 
-public class Config {
+public class AllConfig {
     public static final ForgeConfigSpec SERVER_CONFIG;
     public static ForgeConfigSpec.DoubleValue activeBoilerHeaterLevelConfigEntry;
     public static ForgeConfigSpec.DoubleValue charcoalForgeHeaterLevelScaleConfigEntry;
