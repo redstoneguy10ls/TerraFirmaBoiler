@@ -1,14 +1,15 @@
 package mod.ckenja.terrafirmaboiler;
 
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.TagKey;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.common.ForgeConfigSpec;
 
-public class ActiveBoilerHeaterBlockTag {
-    public static final TagKey<Block> blockTagKey = BlockTags.create(new ResourceLocation(TerraFirmaBoilerMod.MOD_ID,"active_boiler_heaters"));
-    public static boolean matches(BlockState blockState){
-        return blockState.is(blockTagKey);
+public class AllConfig {
+    public static final ForgeConfigSpec SERVER_CONFIG;
+    public static ForgeConfigSpec.DoubleValue activeBoilerHeaterLevelConfigEntry;
+    public static ForgeConfigSpec.DoubleValue charcoalForgeHeaterLevelScaleConfigEntry;
+    static {
+        ForgeConfigSpec.Builder configBuilder = new ForgeConfigSpec.Builder();
+        activeBoilerHeaterLevelConfigEntry = configBuilder.defineInRange("active_boiler_heater_level", 1.0, -1.0, Double.MAX_VALUE);
+        charcoalForgeHeaterLevelScaleConfigEntry = configBuilder.defineInRange("charcoal_forge_heater_level_scale", 1.0, -1.0, Double.MAX_VALUE);
+        SERVER_CONFIG = configBuilder.build();
     }
 }
