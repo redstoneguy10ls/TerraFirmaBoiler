@@ -16,9 +16,11 @@ import org.slf4j.Logger;
 import static com.simibubi.create.content.contraptions.fluids.tank.BoilerHeaters.registerHeater;
 import static com.simibubi.create.content.contraptions.fluids.tank.BoilerHeaters.registerHeaterProvider;
 
-@Mod(BuildConfig.MODID)
+@Mod(TerraFirmaBoilerMod.MOD_ID)
 public class TerraFirmaBoilerMod {
     public static final Logger LOGGER = LogUtils.getLogger();
+    public static final String MOD_ID = "terrafirmaboiler";
+
     public TerraFirmaBoilerMod() {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::init);
         ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, AllConfig.SERVER_CONFIG);
